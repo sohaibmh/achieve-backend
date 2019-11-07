@@ -12,7 +12,7 @@ class Api::V1::CalendarsController < ApplicationController
   def create
       # byebug
       calendar = Calendar.create(calendar_params)
-      calendar.update(user: @current_user)
+      # calendar.update(user: @current_user)
       if (calendar.valid?)
           render json: calendar
       else
@@ -23,7 +23,7 @@ class Api::V1::CalendarsController < ApplicationController
   private
 
   def calendar_params
-      params.require(:calendar).permit(:date, :user_id)
+      params.require(:calendar).permit(:date, :goal_id)
       # params.permit(:calendar, :date)
   end
 

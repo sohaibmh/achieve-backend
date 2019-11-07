@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  date: MyString
-  goal: one
+  name: MyString
+  user: one
 
 two:
-  date: MyString
-  goal: two
+  name: MyString
+  user: two
