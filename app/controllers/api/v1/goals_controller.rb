@@ -19,6 +19,8 @@ class Api::V1::GoalsController < ApplicationController
       end
   end
 
+  
+
   private
 
   def goal_params

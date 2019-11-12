@@ -20,6 +20,11 @@ class Api::V1::CalendarsController < ApplicationController
       end
   end
 
+  # def update
+  #   calendar = Calendar.update(calendar_params)
+
+  # end
+
   private
 
   def calendar_params
