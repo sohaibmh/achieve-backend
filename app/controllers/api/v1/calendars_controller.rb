@@ -20,15 +20,19 @@ class Api::V1::CalendarsController < ApplicationController
       end
   end
 
-  # def update
-  #   calendar = Calendar.update(calendar_params)
+  def update
 
-  # end
+    calendar = Calendar.find params[:id]
+    calendar.update(calendar_params)
+
+    # Calendar.update(calendar_params)
+
+  end
 
   private
 
   def calendar_params
-      params.require(:calendar).permit(:date, :goal_id)
+      params.require(:calendar).permit(:id, :date, :goal_id)
       # params.permit(:calendar, :date)
   end
 

@@ -19,12 +19,20 @@ class Api::V1::GoalsController < ApplicationController
       end
   end
 
-  
+  def update
+    goal = Goal.find params[:id]
+    goal.update(goal_params)
+  end
+
+  def destroy
+    goal = Goal.find params[:id]
+    goal.destroy
+  end
 
   private
 
   def goal_params
-      params.require(:goal).permit(:name, :user_id)
+      params.require(:goal).permit(:id, :name, :user_id)
       # params.permit(:goal, :date)
   end
 
