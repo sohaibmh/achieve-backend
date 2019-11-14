@@ -10,14 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_04_204243) do
+ActiveRecord::Schema.define(version: 2019_11_06_113921) do
 
   create_table "calendars", force: :cascade do |t|
     t.string "date"
+    t.integer "goal_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["goal_id"], name: "index_calendars_on_goal_id"
+  end
+
+  create_table "goals", force: :cascade do |t|
+    t.string "name"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_calendars_on_user_id"
+    t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -27,5 +35,6 @@ ActiveRecord::Schema.define(version: 2019_11_04_204243) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "calendars", "users"
+  add_foreign_key "calendars", "goals"
+  add_foreign_key "goals", "users"
 end

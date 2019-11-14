@@ -2,8 +2,8 @@
 
 one:
   date: MyString
-  user: one
+  goal: one
 
 two:
   date: MyString
-  user: two
+  goal: two
